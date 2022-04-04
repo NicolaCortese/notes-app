@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/joe-thornton/notes-app/issues"
   },
-  "homepage": "https://github.com/joe-thornton/notes-app#readme"
+  "homepage": "https://github.com/joe-thornton/notes-app#readme",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
 }
