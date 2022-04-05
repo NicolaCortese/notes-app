@@ -7,12 +7,12 @@ class NotesModel {
     return this.notes;
   }
 
-  addNote(note){
-    this.notes.push(note)
+  addNote(note) {
+    this.notes.push(note);
   }
 
-  reset(){
-    this.notes = []
+  reset() {
+    this.notes = [];
   }
 }
 
