@@ -66,27 +66,4 @@ describe("the notesView page", () => {
     );
   });
 
-  // it("displays the result from API call", () => {
-  //   document.body.innerHTML = fs.readFileSync("./index.html");
-
-  //   const model = new NotesModel();
-  //   const view = new NotesView(model);
-
-  //   fetch.mockResponse(() => )
-
-  //   api.loadNotes((notes) => {
-  //     model.setNotes(notes);
-  //     notesView.displayNotes();
-  //   });
-
-  //   loadNotes(callback) {
-  //     fetch("http://localhost:3000/notes")
-  //       .then((response) => response.json())
-  //       .then((notes) => callback(notes));
-  //   }
-
-  //   expect(document.querySelectorAll("div.note")[0].innerText).toEqual(
-  //     "This note is coming from the server"
-  //   );
-  // });
 });

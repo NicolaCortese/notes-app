@@ -16,10 +16,7 @@ class NotesModel {
   }
 
   setNotes(note) {
-    console.log(note);
-    console.log(this.notes);
     this.notes.push(...note);
-    console.log(this.notes);
   }
 }
 
