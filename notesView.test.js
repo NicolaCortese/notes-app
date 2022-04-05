@@ -2,6 +2,7 @@
  * @jest-environment jsdom
  */
 
+const fetchMock = require("jest-fetch-mock").enableMocks();
 const NotesModel = require("./notesModel");
 const NotesView = require("./notesView");
 const fs = require("fs");
@@ -51,11 +52,11 @@ describe("the notesView page", () => {
 
     const buttonEl = document.querySelector("#add-note");
     buttonEl.click();
-    
+
     const noteText2 = document.querySelector("#user-input");
     noteText2.value = "Second test text";
     buttonEl.click();
-    
+
     expect(document.querySelectorAll("div.note").length).toEqual(2);
     expect(document.querySelectorAll("div.note")[0].innerText).toEqual(
       "First test text"
@@ -64,4 +65,28 @@ describe("the notesView page", () => {
       "Second test text"
     );
   });
+
+  // it("displays the result from API call", () => {
+  //   document.body.innerHTML = fs.readFileSync("./index.html");
+
+  //   const model = new NotesModel();
+  //   const view = new NotesView(model);
+
+  //   fetch.mockResponse(() => )
+
+  //   api.loadNotes((notes) => {
+  //     model.setNotes(notes);
+  //     notesView.displayNotes();
+  //   });
+
+  //   loadNotes(callback) {
+  //     fetch("http://localhost:3000/notes")
+  //       .then((response) => response.json())
+  //       .then((notes) => callback(notes));
+  //   }
+
+  //   expect(document.querySelectorAll("div.note")[0].innerText).toEqual(
+  //     "This note is coming from the server"
+  //   );
+  // });
 });

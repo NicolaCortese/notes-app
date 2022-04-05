@@ -20,5 +20,8 @@
   "homepage": "https://github.com/joe-thornton/notes-app#readme",
   "devDependencies": {
     "jest": "^27.5.1"
+  },
+  "dependencies": {
+    "jest-fetch-mock": "^3.0.3"
   }
 }
