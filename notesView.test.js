@@ -39,4 +39,29 @@ describe("the notesView page", () => {
       "Test text"
     );
   });
+
+  it("clears the previous notes after adding a new one", () => {
+    document.body.innerHTML = fs.readFileSync("./index.html");
+
+    const model = new NotesModel();
+    const view = new NotesView(model);
+
+    const noteText1 = document.querySelector("#user-input");
+    noteText1.value = "First test text";
+
+    const buttonEl = document.querySelector("#add-note");
+    buttonEl.click();
+    
+    const noteText2 = document.querySelector("#user-input");
+    noteText2.value = "Second test text";
+    buttonEl.click();
+    
+    expect(document.querySelectorAll("div.note").length).toEqual(2);
+    expect(document.querySelectorAll("div.note")[0].innerText).toEqual(
+      "First test text"
+    );
+    expect(document.querySelectorAll("div.note")[1].innerText).toEqual(
+      "Second test text"
+    );
+  });
 });

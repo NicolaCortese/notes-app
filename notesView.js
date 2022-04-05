@@ -6,12 +6,16 @@ class NotesView {
     const addNoteButton = document.querySelector("#add-note");
 
     addNoteButton.addEventListener("click", () => {
-      const noteText = document.querySelector("#user-input").value;
-      this.addNewNote(noteText);
+      const noteText = document.querySelector("#user-input");
+      this.addNewNote(noteText.value);
+      noteText.value = "";
     });
   }
 
   displayNotes() {
+    const notesToClear = document.querySelectorAll(".note");
+    notesToClear.forEach((note) => note.remove());
+
     const notes = this.model.getNotes();
     notes.forEach((note) => {
       const noteEl = document.createElement("div");
